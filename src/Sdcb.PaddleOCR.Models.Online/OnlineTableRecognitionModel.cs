@@ -61,7 +61,7 @@ public class OnlineTableRecognitionModel
     /// </summary>
     public static OnlineTableRecognitionModel EnglishMobileV2_SLANET => new(
         "en_ppstructure_mobile_v2.0_SLANet",
-        new Uri("https://paddleocr.bj.bcebos.com/ppstructure/models/slanet/en_ppstructure_mobile_v2.0_SLANet_infer.tar"),
+        new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/en_ppstructure_mobile_v2.0_SLANet_infer.tar.gz"),
         "table_structure_dict.txt");
 
     /// <summary>
@@ -69,7 +69,7 @@ public class OnlineTableRecognitionModel
     /// </summary>
     public static OnlineTableRecognitionModel ChineseMobileV2_SLANET => new(
         "ch_ppstructure_mobile_v2.0_SLANet",
-        new Uri("https://paddleocr.bj.bcebos.com/ppstructure/models/slanet/ch_ppstructure_mobile_v2.0_SLANet_infer.tar"),
+        new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/ch_ppstructure_mobile_v2.0_SLANet_infer.tar.gz"),
         "table_structure_dict_ch.txt");
 
     /// <summary>

@@ -31,12 +31,12 @@ public record OnlineClassificationModel(string Name, Uri Uri, ModelVersion Versi
     /// <summary>
     /// Gets an online classification model for slim quantized text angle classification (Size: 2.1M).
     /// </summary>
-    public static OnlineClassificationModel ChineseMobileSlimV2 => new("ch_ppocr_mobile_slim_v2.0_cls", new Uri("https://paddleocr.bj.bcebos.com/dygraph_v2.0/ch/ch_ppocr_mobile_v2.0_cls_slim_infer.tar"), ModelVersion.V2);
+    public static OnlineClassificationModel ChineseMobileSlimV2 => new("ch_ppocr_mobile_slim_v2.0_cls", new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/ch_ppocr_mobile_v2.0_cls_slim_infer.tar.gz"), ModelVersion.V2);
 
     /// <summary>
     /// Gets an online classification model for original text angle classification (Size: 1.38M).
     /// </summary>
-    public static OnlineClassificationModel ChineseMobileV2 => new("ch_ppocr_mobile_v2.0_cls", new Uri("https://paddleocr.bj.bcebos.com/dygraph_v2.0/ch/ch_ppocr_mobile_v2.0_cls_infer.tar"), ModelVersion.V2);
+    public static OnlineClassificationModel ChineseMobileV2 => new("ch_ppocr_mobile_v2.0_cls", new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/ch_ppocr_mobile_v2.0_cls_infer.tar.gz"), ModelVersion.V2);
 
     /// <summary>
     /// Gets an array of all available online classification models.

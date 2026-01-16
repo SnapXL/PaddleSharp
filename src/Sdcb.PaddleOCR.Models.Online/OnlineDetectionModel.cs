@@ -32,90 +32,90 @@ public record OnlineDetectionModel(string Name, Uri Uri, ModelVersion Version)
     /// <summary>
     /// v5 server model, supporting Chinese, English, multilingual text detection
     /// </summary>
-    public static OnlineDetectionModel ChineseServerV5 => new("PP-OCRv5_server_det_infer", new Uri("https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0.0/PP-OCRv5_server_det_infer.tar"), ModelVersion.V5);
+    public static OnlineDetectionModel ChineseServerV5 => new("PP-OCRv5_server_det_infer", new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/PP-OCRv5_server_det_infer.tar.gz"), ModelVersion.V5);
 
     /// <summary>
     /// v5 model, supporting Chinese, English, multilingual text detection
     /// </summary>
-    public static OnlineDetectionModel ChineseV5 => new("PP-OCRv5_mobile_det_infer", new Uri("https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0.0/PP-OCRv5_mobile_det_infer.tar"), ModelVersion.V5);
+    public static OnlineDetectionModel ChineseV5 => new("PP-OCRv5_mobile_det_infer", new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/PP-OCRv5_mobile_det_infer.tar.gz"), ModelVersion.V5);
 
     /// <summary>
     /// v4 model, supporting Chinese, English, multilingual text detection
     /// (Size: 4.66M)
     /// </summary>
-    public static OnlineDetectionModel ChineseV4 => new("ch_PP-OCRv4_det", new Uri("https://paddleocr.bj.bcebos.com/PP-OCRv4/chinese/ch_PP-OCRv4_det_infer.tar"), ModelVersion.V4);
+    public static OnlineDetectionModel ChineseV4 => new("ch_PP-OCRv4_det", new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/ch_PP-OCRv4_det_infer.tar.gz"), ModelVersion.V4);
 
     /// <summary>
     /// v4 server model, supporting Chinese, English, multilingual text detection
     /// (Size: 110M)
     /// </summary>
-    public static OnlineDetectionModel ChineseServerV4 => new("detv4_teacher_inference", new Uri("https://paddleocr.bj.bcebos.com/PP-OCRv4/chinese/ch_PP-OCRv4_det_server_infer.tar"), ModelVersion.V4);
+    public static OnlineDetectionModel ChineseServerV4 => new("detv4_teacher_inference", new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/ch_PP-OCRv4_det_server_infer.tar.gz"), ModelVersion.V4);
 
     /// <summary>
     /// slim quantization with distillation lightweight model, supporting Chinese, English, multilingual text detection
     /// (Size: 1.1M)
     /// </summary>
-    public static OnlineDetectionModel ChineseV3Slim => new("ch_PP-OCRv3_det_slim", new Uri("https://paddleocr.bj.bcebos.com/PP-OCRv3/chinese/ch_PP-OCRv3_det_slim_infer.tar"), ModelVersion.V3);
+    public static OnlineDetectionModel ChineseV3Slim => new("ch_PP-OCRv3_det_slim", new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/ch_PP-OCRv3_det_slim_infer.tar.gz"), ModelVersion.V3);
 
     /// <summary>
     /// Original lightweight model, supporting Chinese, English, multilingual text detection
     /// (Size: 3.8M)
     /// </summary>
-    public static OnlineDetectionModel ChineseV3 => new("ch_PP-OCRv3_det", new Uri("https://paddleocr.bj.bcebos.com/PP-OCRv3/chinese/ch_PP-OCRv3_det_infer.tar"), ModelVersion.V3);
+    public static OnlineDetectionModel ChineseV3 => new("ch_PP-OCRv3_det", new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/ch_PP-OCRv3_det_infer.tar.gz"), ModelVersion.V3);
 
     /// <summary>
     /// slim quantization with distillation lightweight model, supporting Chinese, English, multilingual text detection
     /// (Size: 3M)
     /// </summary>
-    public static OnlineDetectionModel ChineseV2Slim => new("ch_PP-OCRv2_det_slim", new Uri("https://paddleocr.bj.bcebos.com/PP-OCRv2/chinese/ch_PP-OCRv2_det_slim_quant_infer.tar"), ModelVersion.V2);
+    public static OnlineDetectionModel ChineseV2Slim => new("ch_PP-OCRv2_det_slim", new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/ch_PP-OCRv2_det_slim_quant_infer.tar.gz"), ModelVersion.V2);
 
     /// <summary>
     /// Original lightweight model, supporting Chinese, English, multilingual text detection
     /// (Size: 3M)
     /// </summary>
-    public static OnlineDetectionModel ChineseV2 => new("ch_PP-OCRv2_det", new Uri("https://paddleocr.bj.bcebos.com/PP-OCRv2/chinese/ch_PP-OCRv2_det_infer.tar"), ModelVersion.V2);
+    public static OnlineDetectionModel ChineseV2 => new("ch_PP-OCRv2_det", new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/ch_PP-OCRv2_det_infer.tar.gz"), ModelVersion.V2);
 
     /// <summary>
     /// Slim pruned lightweight model, supporting Chinese, English, multilingual text detection
     /// (Size: 2.6M)
     /// </summary>
-    public static OnlineDetectionModel ChineseMobileSlimV2 => new("ch_ppocr_mobile_slim_v2.0_det", new Uri("https://paddleocr.bj.bcebos.com/dygraph_v2.0/slim/ch_ppocr_mobile_v2.0_det_prune_infer.tar"), ModelVersion.V2);
+    public static OnlineDetectionModel ChineseMobileSlimV2 => new("ch_ppocr_mobile_slim_v2.0_det", new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/ch_ppocr_mobile_v2.0_det_prune_infer.tar.gz"), ModelVersion.V2);
 
     /// <summary>
     /// Original lightweight model, supporting Chinese, English, multilingual text detection
     /// (Size: 3M)
     /// </summary>
-    public static OnlineDetectionModel ChineseMobileV2 => new("ch_ppocr_mobile_v2.0_det", new Uri("https://paddleocr.bj.bcebos.com/dygraph_v2.0/ch/ch_ppocr_mobile_v2.0_det_infer.tar"), ModelVersion.V2);
+    public static OnlineDetectionModel ChineseMobileV2 => new("ch_ppocr_mobile_v2.0_det", new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/ch_ppocr_mobile_v2.0_det_infer.tar.gz"), ModelVersion.V2);
 
     /// <summary>
     /// General model, which is larger than the lightweight model, but achieved better performance
     /// (Size: 47M)
     /// </summary>
-    public static OnlineDetectionModel ChineseServerV2 => new("ch_ppocr_server_v2.0_det", new Uri("https://paddleocr.bj.bcebos.com/dygraph_v2.0/ch/ch_ppocr_server_v2.0_det_infer.tar"), ModelVersion.V2);
+    public static OnlineDetectionModel ChineseServerV2 => new("ch_ppocr_server_v2.0_det", new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/ch_ppocr_server_v2.0_det_infer.tar.gz"), ModelVersion.V2);
 
     /// <summary>
     /// Slim qunatization with distillation lightweight detection model, supporting English
     /// (Size: 1.1M)
     /// </summary>
-    public static OnlineDetectionModel EnglishV3Slim => new("en_PP-OCRv3_det_slim", new Uri("https://paddleocr.bj.bcebos.com/PP-OCRv3/english/en_PP-OCRv3_det_slim_infer.tar"), ModelVersion.V3);
+    public static OnlineDetectionModel EnglishV3Slim => new("en_PP-OCRv3_det_slim", new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/en_PP-OCRv3_det_slim_infer.tar.gz"), ModelVersion.V3);
 
     /// <summary>
     /// Original lightweight detection model, supporting English
     /// (Size: 3.8M)
     /// </summary>
-    public static OnlineDetectionModel EnglishV3 => new("en_PP-OCRv3_det", new Uri("https://paddleocr.bj.bcebos.com/PP-OCRv3/english/en_PP-OCRv3_det_infer.tar"), ModelVersion.V3);
+    public static OnlineDetectionModel EnglishV3 => new("en_PP-OCRv3_det", new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/en_PP-OCRv3_det_infer.tar.gz"), ModelVersion.V3);
 
     /// <summary>
     /// Slim qunatization with distillation lightweight detection model, supporting English
     /// (Size: 1.1M)
     /// </summary>
-    public static OnlineDetectionModel MultiLanguageV3Slim => new("ml_PP-OCRv3_det_slim", new Uri("https://paddleocr.bj.bcebos.com/PP-OCRv3/multilingual/Multilingual_PP-OCRv3_det_slim_infer.tar"), ModelVersion.V3);
+    public static OnlineDetectionModel MultiLanguageV3Slim => new("ml_PP-OCRv3_det_slim", new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/Multilingual_PP-OCRv3_det_slim_infer.tar.gz"), ModelVersion.V3);
 
     /// <summary>
     /// Original lightweight detection model, supporting English
     /// (Size: 3.8M)
     /// </summary>
-    public static OnlineDetectionModel MultiLanguageV3 => new("ml_PP-OCRv3_det", new Uri("https://paddleocr.bj.bcebos.com/PP-OCRv3/multilingual/Multilingual_PP-OCRv3_det_infer.tar"), ModelVersion.V3);
+    public static OnlineDetectionModel MultiLanguageV3 => new("ml_PP-OCRv3_det", new Uri("https://github.com/SnapXL/PaddleSharp/releases/download/3.0.0/Multilingual_PP-OCRv3_det_infer.tar.gz"), ModelVersion.V3);
 
     /// <summary>
     /// Gets all available online detection models

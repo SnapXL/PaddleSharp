@@ -1,5 +1,7 @@
 ﻿using SharpCompress.Archives;
 using SharpCompress.Archives.GZip;
+using SharpCompress.Archives.Zip;
+using SharpCompress.Archives.SevenZip;
 using System;
 using System.Collections.Concurrent;
 using System.IO;
@@ -13,17 +15,16 @@ namespace Sdcb.PaddleOCR.Models.Online.Details;
 
 internal static class Utils
 {
-    public static Task DownloadFile(Uri uri, string localFile, CancellationToken cancellationToken) => DownloadFiles(new Uri[] { uri }, localFile, cancellationToken);
+    public static Task DownloadFile(Uri uri, string localFile, CancellationToken cancellationToken, HttpClient? customClient = null) => DownloadFiles(new[] { uri }, localFile, cancellationToken, customClient);
 
-    public static async Task DownloadFiles(Uri[] uris, string localFile, CancellationToken cancellationToken)
+    public static async Task DownloadFiles(Uri[] uris, string localFile, CancellationToken cancellationToken, HttpClient? customClient = null)
     {
-        using HttpClient http = new();
-
         foreach (Uri uri in uris)
         {
             try
             {
-                HttpResponseMessage resp = await http.GetAsync(uri, cancellationToken);
+                var Http = customClient ?? _defaultHttp;
+                HttpResponseMessage resp = await Http.GetAsync(uri, cancellationToken);
                 if (!resp.IsSuccessStatusCode)
                 {
                     Console.WriteLine($"Failed to download: {uri}, status code: {(int)resp.StatusCode}({resp.StatusCode})");
@@ -81,21 +82,28 @@ internal static class Utils
             Console.WriteLine($"Extracting {localTarFile} to {rootDir}");
             using (var archive = ArchiveFactory.Open(localTarFile))
             {
-                if (archive is GZipArchive || archive is ZstdArchive || archive is BZip2Archive || archive is LZipArchive)
+                if (archive is GZipArchive or ZipArchive or SevenZipArchive)
                 {
-                    using var stream = archive.Entries.Single().OpenEntryStream();
+                    using var stream = await archive
+                        .Entries.Single()
+                        .OpenEntryStreamAsync(cancellationToken);
                     using var ms = new MemoryStream();
-                    stream.CopyTo(ms);
+                    await stream.CopyToAsync(ms);
                     ms.Position = 0;
-            
                     using var inner = ArchiveFactory.Open(ms);
-                    inner.WriteToDirectory(rootDir, new ExtractionOptions { ExtractFullPath = true, Overwrite = true });
+                    await inner.WriteToDirectoryAsync(
+                        rootDir,
+                        cancellationToken: cancellationToken
+                    );
                 }
                 else
                 {
-                    archive.WriteToDirectory(rootDir, new ExtractionOptions { ExtractFullPath = true, Overwrite = true });
+                    await archive.WriteToDirectoryAsync(
+                        rootDir,
+                        cancellationToken: cancellationToken
+                    );
                 }
-            
+
                 CheckLocalOCRModel(rootDir);
             }
             
@@ -135,4 +143,5 @@ internal static class Utils
 
     public readonly static Type RootType = typeof(Settings);
     public readonly static Assembly RootAssembly = typeof(Settings).Assembly;
+    private static readonly HttpClient _defaultHttp = new();
 }
