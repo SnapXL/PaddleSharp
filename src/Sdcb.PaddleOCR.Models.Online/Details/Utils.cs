@@ -79,25 +79,26 @@ internal static class Utils
             }
 
             Console.WriteLine($"Extracting {localTarFile} to {rootDir}");
-            using (IArchive archive = ArchiveFactory.Open(localTarFile))
+            using (var archive = ArchiveFactory.Open(localTarFile))
             {
-                if (archive is GZipArchive)
+                if (archive is GZipArchive || archive is ZstdArchive || archive is BZip2Archive || archive is LZipArchive)
                 {
-                    using Stream stream = archive.Entries.Single().OpenEntryStream();
-                    using MemoryStream ms = new();
+                    using var stream = archive.Entries.Single().OpenEntryStream();
+                    using var ms = new MemoryStream();
                     stream.CopyTo(ms);
                     ms.Position = 0;
-                    IArchive inner = ArchiveFactory.Open(ms);
-                    inner.WriteToDirectory(rootDir);
+            
+                    using var inner = ArchiveFactory.Open(ms);
+                    inner.WriteToDirectory(rootDir, new ExtractionOptions { ExtractFullPath = true, Overwrite = true });
                 }
                 else
                 {
-                    archive.WriteToDirectory(rootDir);
+                    archive.WriteToDirectory(rootDir, new ExtractionOptions { ExtractFullPath = true, Overwrite = true });
                 }
-
+            
                 CheckLocalOCRModel(rootDir);
             }
-
+            
             File.Delete(localTarFile);
         }
         finally
