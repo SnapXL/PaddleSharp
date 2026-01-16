@@ -5,8 +5,9 @@
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <LangVersion>10</LangVersion>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/sdcb/PaddleSharp</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/sdcb/PaddleSharp.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/SnapXL/PaddleSharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SnapXL/PaddleSharp.git</RepositoryUrl>
+    <PackageId>BrycensRanch.Sdcb.PaddleOCR.Models.Online</PackageId>
     <RepositoryType>git</RepositoryType>
     <PackageTags>Sdcb;AI;Paddle;OCR;PaddleOCR;PaddleSharp</PackageTags>
     <VersionPrefix>2.5</VersionPrefix>

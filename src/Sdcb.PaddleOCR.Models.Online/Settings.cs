@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Net.Http;
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Sdcb.PaddleOCR.Tests")]
@@ -15,4 +16,5 @@ public static class Settings
     /// The directory where PaddleOCR Models are saved.
     /// </summary>
     public static string GlobalModelDirectory { get; set; } = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "paddleocr-models");
+    public static HttpClient? HttpClient { get; set; }
 }

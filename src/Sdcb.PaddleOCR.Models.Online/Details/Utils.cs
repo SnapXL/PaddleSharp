@@ -76,7 +76,7 @@ internal static class Utils
             if (!File.Exists(localTarFile) || new FileInfo(localTarFile).Length == 0)
             {
                 Console.WriteLine($"Downloading {name} model from {uri}");
-                await DownloadFile(uri, localTarFile, cancellationToken);
+                await DownloadFile(uri, localTarFile, cancellationToken, Settings.HttpClient);
             }
 
             Console.WriteLine($"Extracting {localTarFile} to {rootDir}");

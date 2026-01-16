@@ -14,5 +14,5 @@
 *.nuspec
 *.props
 *.snupkg
-*.tar
+*.tar*
 /build/download
